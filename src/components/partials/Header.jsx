@@ -9,7 +9,7 @@ const Header = () => {
       </div>
 
       <div>
-        <div className="rounded-full bg-primary  flex items-center justify-center min-h-[2rem] h-[2rem]  max-w-[2rem] w=[2rem] py-.5 px-2 text-white pt-px">
+        <div className="rounded-full bg-primary  flex items-center justify-center min-h-[2rem] h-[2rem]  max-w-[2rem] w=[2rem] py-.5 px-3 text-white pt-px">
           <span className="">J</span>
           <span className="">P</span>
         </div>

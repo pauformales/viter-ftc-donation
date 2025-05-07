@@ -48,22 +48,24 @@ const SettingsCategoryList = () => {
                   <td className="truncate">
                     Weekly Community Development Prog...
                   </td>
-                  <div className="flex mt-3 gap-3 justify-end mr-10">
-                    <button
-                      type="button"
-                      className=" tooltip-action-table"
-                      data-tooltip="Edit"
-                    >
-                      <FaEdit />
-                    </button>
-                    <button
-                      type="button"
-                      className=" tooltip-action-table"
-                      data-tooltip="Archive"
-                    >
-                      <FaArchive />
-                    </button>
-                  </div>
+                  <td>
+                    <div className="flex mt-3 gap-3 justify-end mr-10">
+                      <button
+                        type="button"
+                        className=" tooltip-action-table"
+                        data-tooltip="Edit"
+                      >
+                        <FaEdit />
+                      </button>
+                      <button
+                        type="button"
+                        className=" tooltip-action-table"
+                        data-tooltip="Archive"
+                      >
+                        <FaArchive />
+                      </button>
+                    </div>
+                  </td>
                 </tr>
 
                 <tr>
@@ -73,22 +75,24 @@ const SettingsCategoryList = () => {
                   <td className="truncate">
                     Give Unrestricted Gifts That Allows Frontl...
                   </td>
-                  <div className="flex mt-3 gap-3 justify-end mr-10">
-                    <button
-                      type="button"
-                      className=" tooltip-action-table"
-                      data-tooltip="Edit"
-                    >
-                      <FaEdit />
-                    </button>
-                    <button
-                      type="button"
-                      className=" tooltip-action-table"
-                      data-tooltip="Archive"
-                    >
-                      <FaArchive />
-                    </button>
-                  </div>
+                  <td>
+                    <div className="flex mt-3 gap-3 justify-end mr-10">
+                      <button
+                        type="button"
+                        className=" tooltip-action-table"
+                        data-tooltip="Edit"
+                      >
+                        <FaEdit />
+                      </button>
+                      <button
+                        type="button"
+                        className=" tooltip-action-table"
+                        data-tooltip="Archive"
+                      >
+                        <FaArchive />
+                      </button>
+                    </div>
+                  </td>
                 </tr>
 
                 <tr>
@@ -96,22 +100,24 @@ const SettingsCategoryList = () => {
                   <td className="text-green-900">ACTIVE</td>
                   <td>Sponsorship</td>
                   <td>Sponsorship</td>
-                  <div className="flex mt-3 gap-3 justify-end mr-10">
-                    <button
-                      type="button"
-                      className=" tooltip-action-table"
-                      data-tooltip="Edit"
-                    >
-                      <FaEdit />
-                    </button>
-                    <button
-                      type="button"
-                      className=" tooltip-action-table"
-                      data-tooltip="Archive"
-                    >
-                      <FaArchive />
-                    </button>
-                  </div>
+                  <td>
+                    <div className="flex mt-3 gap-3 justify-end mr-10">
+                      <button
+                        type="button"
+                        className=" tooltip-action-table"
+                        data-tooltip="Edit"
+                      >
+                        <FaEdit />
+                      </button>
+                      <button
+                        type="button"
+                        className=" tooltip-action-table"
+                        data-tooltip="Archive"
+                      >
+                        <FaArchive />
+                      </button>
+                    </div>
+                  </td>
                 </tr>
               </>
               {/* )} */}
