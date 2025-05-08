@@ -21,9 +21,14 @@ if (isset($_SERVER['HTTP_AUTHORIZATION'])) {
     }
 
 
-    //POST OR CREATE
-
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    //PUT OR UPDATE
+    if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
+        $result = require 'update.php';
+        sendResponse($result);
+        exit;
+    }
+    // POST OR CREATE
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = require 'create.php';
         sendResponse($result);
         exit;

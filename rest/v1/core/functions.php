@@ -14,7 +14,7 @@ function checkDbConnection()
         $response->setSuccess(false);
         $error['type'] = 'invalid_request_error';
         $error['success'] = false;
-        $error['error'] = 'Database Connection Failed';
+        $error['error'] = 'Database Connection Failed.';
         $response->setData($error);
         $response->send();
         exit;
@@ -23,7 +23,7 @@ function checkDbConnection()
 
 function checkQuery($query, $msg)
 {
-    if ($query) {
+    if (!$query) {
         $response = new Response();
         $error = [];
         $response->setSuccess(false);
@@ -52,17 +52,15 @@ function invalidInput()
 
 function checkPayload($jsonData)
 {
-    if (empty($jasonData) || $jasonData == null) {
-        invalidInput();
-    }
+    if (empty($jsonData) || $jsonData === null) invalidInput();
 }
 
-function checkIndex($jasonData, $index)
+function checkIndex($jsonData, $index)
 {
-    if (!isset($jasonData[$index]) || $jasonData[$index] == '') {
+    if (!isset($jsonData[$index]) || $jsonData[$index] === '') {
         invalidInput();
     }
-    return trim($jasonData[$index]);
+    return trim($jsonData[$index]);
 }
 
 function checkId($id)
@@ -88,7 +86,7 @@ function checkKeyword($keyword)
         $response->setSuccess(false);
         $error['code'] = "400";
         $error['success'] = false;
-        $error['error'] = "Search keyword cannot be blank";
+        $error['error'] = "Search keyword cannot be blank.";
         $response->setData($error);
         $response->send();
         exit;
@@ -99,14 +97,14 @@ function checkLimitId($start, $total)
 {
     if (
         $start == '' || !is_numeric($start) ||
-        $start == '' || !is_numeric($total)
+        $total == '' || !is_numeric($total)
     ) {
         $response = new Response();
         $error = [];
         $response->setSuccess(false);
         $error['code'] = "400";
         $error['success'] = false;
-        $error['error'] = "Limit ID Cannot be blank or must be numeric.";
+        $error['error'] = "Limit ID cannot be blank or must be numeric.";
         $response->setData($error);
         $response->send();
         exit;
@@ -120,16 +118,16 @@ function getResultData($query)
 
 function checkReadQuery($query, $total_result, $object_total, $object_start)
 {
-
     $response = new Response();
     $returnData = [];
 
     $returnData['data'] = getResultData($query);
     $returnData['count'] = $query->rowCount();
     $returnData['total'] = $total_result->rowCount();
-    $returnData['per_page'] = (int)$object_total;
+    $returnData['per_page'] = $object_total;
     $returnData['page'] = (int)$object_start;
     $returnData['total_pages'] = ceil($total_result->rowCount() / $object_total);
+    $returnData['success'] = true;
     $response->setData($returnData);
     $response->send();
     exit;
@@ -138,63 +136,63 @@ function checkReadQuery($query, $total_result, $object_total, $object_start)
 function checkCreate($object)
 {
     $query = $object->create();
-    checkQuery($query, "There's a problem with your request. (core create)");
+    checkQuery($query, "There's a problem with you request. (core create)");
     return $query;
 }
 
 function checkReadAll($object)
 {
     $query = $object->readAll();
-    checkQuery($query, "There's a problem with your request. (core readAll)");
+    checkQuery($query, "There's a problem with you request. (core readAll)");
     return $query;
 }
 
 function checkReadLimit($object)
 {
     $query = $object->readLimit();
-    checkQuery($query, "There's a problem with your request. (core readLimit)");
+    checkQuery($query, "There's a problem with you request. (core readLimit)");
     return $query;
 }
 
 function checkSearch($object)
 {
     $query = $object->search();
-    checkQuery($query, "There's a problem with your request. (core search)");
+    checkQuery($query, "There's a problem with you request. (core search)");
     return $query;
 }
 
 function checkReadById($object)
 {
     $query = $object->readById();
-    checkQuery($query, "There's a problem with your request. (core readById)");
+    checkQuery($query, "There's a problem with you request. (core readById)");
     return $query;
 }
 
 function checkReadKey($object)
 {
     $query = $object->readKey();
-    checkQuery($query, "There's a problem with your request. (core readKey)");
+    checkQuery($query, "There's a problem with you request. (core readKey)");
     return $query;
 }
 
 function checkUpdate($object)
 {
     $query = $object->update();
-    checkQuery($query, "There's a problem with your request. (core update)");
+    checkQuery($query, "There's a problem with you request. (core update)");
     return $query;
 }
 
 function checkDelete($object)
 {
     $query = $object->delete();
-    checkQuery($query, "There's a problem with your request. (core delete)");
+    checkQuery($query, "There's a problem with you request. (core delete)");
     return $query;
 }
 
 function checkActive($object)
 {
     $query = $object->active();
-    checkQuery($query, "There's a problem with your request. (core active)");
+    checkQuery($query, "There's a problem with you request. (core active)");
     return $query;
 }
 
@@ -235,6 +233,7 @@ function getQueriedData($query)
     $response->send();
     exit;
 }
+
 
 function sendResponse($result)
 {

@@ -8,6 +8,7 @@ class Response
     private $_toCache = false;
     private $_responseData = array();
 
+
     public function setSuccess($success)
     {
         $this->_success = $success;
@@ -33,12 +34,12 @@ class Response
         header("Content-Type:application/json;charset=utf-8");
 
         if ($this->_toCache == true) {
-            header("Cache-Control: max-age-60");
+            header("Cache-Control: max-age=60");
         } else {
-            header("Cache-ControlL no-cache, no-store");
+            header("Cache-Control: no-cache, no-store");
         }
 
-        if ($this->_success === false) {
+        if ($this->_success == false) {
             $this->_responseData = $this->_data;
         } else {
             $this->_responseData = $this->_data;

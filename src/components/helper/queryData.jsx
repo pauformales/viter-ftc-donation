@@ -1,4 +1,4 @@
-import { devApiUrl } from "./function-general";
+import { devApiUrl, devKey } from "./function-general";
 
 export const queryData = (endpoint, method = "get", fd = {}) => {
   let url = devApiUrl + endpoint;
@@ -11,7 +11,7 @@ export const queryData = (endpoint, method = "get", fd = {}) => {
 
   let options = { method, headers: myHeaders };
 
-  if (method === "get") {
+  if (method !== "get") {
     options = {
       ...options,
       body: JSON.stringify(fd),
