@@ -4,6 +4,7 @@ import SettingsCategory from "./components/pages/developer/settings/category/Set
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { StoreProvider } from "../store/StoreContext";
 import SettingsDesignation from "./components/pages/developer/settings/designation/SettingsDesignation";
+import SettingsNotification from "./components/pages/developer/settings/notification/SettingsNotification";
 
 function App() {
   const queryClient = new QueryClient();
@@ -26,6 +27,10 @@ function App() {
               <Route
                 path="/settings/designation"
                 element={<SettingsDesignation />}
+              />
+              <Route
+                path="/settings/notification"
+                element={<SettingsNotification />}
               />
             </Routes>
           </Router>
