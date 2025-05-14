@@ -12,6 +12,7 @@ if (array_key_exists('designationid', $_GET)) {
     // CHECKING DATA
     $designation->designation_aid = $_GET['designationid'];
     $designation->designation_name = checkIndex($data, 'designation_name');
+    $designation->designation_category_id = checkIndex($data, 'designation_category_id');
     $designation->designation_updated = date('Y-m-d H:i:s');
 
     // VALIDATION

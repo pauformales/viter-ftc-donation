@@ -37,12 +37,12 @@ export const developerNavigation = [
       {
         name: "users",
         code: "users",
-        link: "/users",
+        link: "/settings/users",
       },
       {
         name: "general",
         code: "general",
-        link: "/general",
+        link: "/settings/general",
       },
       {
         name: "category",
@@ -57,12 +57,12 @@ export const developerNavigation = [
       {
         name: "notification",
         code: "notification",
-        link: "/notification",
+        link: "/settings/notification",
       },
       {
         name: "maintenance",
         code: "maintenance",
-        link: "/maintenance",
+        link: "/settings/maintenance",
       },
     ],
   },

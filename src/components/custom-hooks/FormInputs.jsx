@@ -74,3 +74,36 @@ export const InputTextArea = ({
     </>
   );
 };
+
+export const InputSelect = ({
+  label,
+  required = true,
+  onChange = null,
+  ...props
+}) => {
+  const [field, meta] = useField(props);
+
+  return (
+    <>
+      <label htmlFor={props.id || props.name}>
+        {required && <span className="text-alert">*</span>}
+        {label}
+      </label>
+
+      <select
+        {...field}
+        {...props}
+        className={meta.touched && meta.error ? "error-show" : null}
+        onChange={(e) => {
+          onChange !== null && onChange(e);
+          field.onChange(e);
+        }}
+        autoComplete="off"
+      />
+
+      {meta.touched && meta.error ? (
+        <span className="error-show">{meta.error}</span>
+      ) : null}
+    </>
+  );
+};
