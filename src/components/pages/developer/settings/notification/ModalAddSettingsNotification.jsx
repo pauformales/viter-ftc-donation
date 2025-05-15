@@ -70,6 +70,7 @@ const ModalAddSettingsNotification = ({ itemEdit, setIsModal }) => {
     notification_name: itemEdit ? itemEdit.notification_name : "",
     notification_purpose: itemEdit ? itemEdit.notification_purpose : "",
     notification_email: itemEdit ? itemEdit.notification_email : "",
+    notification_name_old: itemEdit ? itemEdit.notification_name : "",
   };
 
   const yupSchema = Yup.object({
@@ -78,6 +79,7 @@ const ModalAddSettingsNotification = ({ itemEdit, setIsModal }) => {
     notification_email: Yup.string()
       .email("Invalid email")
       .required("required"),
+    notification_name_old: Yup.string(),
   });
 
   const handleClose = () => {

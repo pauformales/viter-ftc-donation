@@ -22,7 +22,7 @@ const SettingsDesignation = () => {
       <Navigation menu="settings" subMenu="designation" />
       <div className="wrapper">
         {/* BREADCRUMBS OR ADD BUTTON */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between py-2">
           <BreadCrumbs />
           <button
             type="button"

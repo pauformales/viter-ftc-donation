@@ -22,7 +22,7 @@ const SettingsNotification = () => {
       <Navigation menu="settings" subMenu="notification" />
       <div className="wrapper">
         {/* BREADCRUMBS OR ADD BUTTON */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between py-2">
           <BreadCrumbs />
           <button
             type="button"

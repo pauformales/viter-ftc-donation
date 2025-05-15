@@ -32,6 +32,12 @@ export const StoreReducer = (state, action) => {
         ...state,
         delete: action.payload,
       };
+    case "IS_SEARCH":
+      return {
+        ...state,
+        isSearch: action.payload,
+      };
+      
     default:
       return state;
   }
